@@ -10,13 +10,8 @@ export default defineConfig(() => {
       input: {
         path: './openapi.json',
       },
-      hooks: {
-        done: [
-          'prettier --write src/generated/*.ts',
-        ],
-      },
       output: {
-        path: './src/generated',
+        path: './src',
         clean: true,
       },
       plugins: [
