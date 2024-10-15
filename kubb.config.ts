@@ -22,21 +22,17 @@ export default defineConfig(() => {
         pluginTs({
           output: {
             path: './models',
-            exportAs: 'models',
           },
           enumType: 'asConst',
-          dateType: 'string',
         }),
         pluginClient({
           output: {
             path: './clients',
-            exportAs: 'clients',
           },
         }),
         pluginZod({
           output: {
             path: './zod',
-            exportAs: 'schemas',
           },
           typed: true,
           typedSchema: true,
