@@ -1,1 +1,0 @@
-{ "required": ["refreshToken"], "type": "object", "properties": { "refreshToken": { "minLength": 1, "type": "string", "description": "The refresh token required for generating a new access token" } }, "additionalProperties": false, "description": "DTO for refreshing a token", "x-readme-ref-name": "RefreshRequest" }

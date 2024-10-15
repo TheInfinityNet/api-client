@@ -1,1 +1,0 @@
-{ "type": "object", "properties": { "message": { "type": "string", "nullable": true } }, "additionalProperties": false, "x-readme-ref-name": "CommonMessageResponse" }

@@ -1,0 +1,33 @@
+{
+  "required": [
+    "email",
+    "firstName",
+    "lastName",
+    "mobileNumber",
+    "password",
+    "passwordConfirmation"
+  ],
+  "type": "object",
+  "properties": {
+    "firstName": { "maxLength": 100, "minLength": 1, "type": "string" },
+    "middleName": { "type": "string", "nullable": true },
+    "lastName": { "maxLength": 100, "minLength": 1, "type": "string" },
+    "email": { "minLength": 1, "type": "string", "format": "email" },
+    "password": { "maxLength": 20, "minLength": 6, "type": "string" },
+    "passwordConfirmation": {
+      "maxLength": 20,
+      "minLength": 6,
+      "type": "string"
+    },
+    "mobileNumber": { "minLength": 1, "type": "string", "format": "tel" },
+    "birthdate": { "type": "string", "format": "date-time" },
+    "gender": {
+      "enum": ["Male", "Female", "Other"],
+      "type": "string",
+      "x-readme-ref-name": "Gender"
+    },
+    "acceptTerms": { "type": "boolean" }
+  },
+  "additionalProperties": false,
+  "x-readme-ref-name": "SignUpRequest"
+}

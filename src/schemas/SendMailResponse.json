@@ -1,1 +1,0 @@
-{ "type": "object", "properties": { "message": { "type": "string", "nullable": true }, "retryAfter": { "type": "integer", "format": "int32" } }, "additionalProperties": false, "x-readme-ref-name": "SendMailResponse" }

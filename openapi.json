@@ -23,9 +23,7 @@
   "paths": {
     "/identity/accounts/reset-by-code": {
       "post": {
-        "tags": [
-          "Account APIs"
-        ],
+        "tags": ["Account APIs"],
         "description": "Reset password by code",
         "requestBody": {
           "content": {
@@ -72,9 +70,7 @@
     },
     "/identity/accounts/reset-by-token": {
       "post": {
-        "tags": [
-          "Account APIs"
-        ],
+        "tags": ["Account APIs"],
         "description": "Reset password by token",
         "parameters": [
           {
@@ -130,9 +126,7 @@
     },
     "/identity/auth/refresh": {
       "post": {
-        "tags": [
-          "Auth APIs"
-        ],
+        "tags": ["Auth APIs"],
         "description": "Refresh the access token",
         "requestBody": {
           "content": {
@@ -179,9 +173,7 @@
     },
     "/identity/auth/send-mail": {
       "post": {
-        "tags": [
-          "Auth APIs"
-        ],
+        "tags": ["Auth APIs"],
         "description": "Send verification email",
         "requestBody": {
           "content": {
@@ -228,9 +220,7 @@
     },
     "/identity/auth/sign-in": {
       "post": {
-        "tags": [
-          "Auth APIs"
-        ],
+        "tags": ["Auth APIs"],
         "description": "Sign in a user",
         "requestBody": {
           "content": {
@@ -277,9 +267,7 @@
     },
     "/identity/auth/sign-up": {
       "post": {
-        "tags": [
-          "Auth APIs"
-        ],
+        "tags": ["Auth APIs"],
         "description": "Sign up a new user",
         "requestBody": {
           "content": {
@@ -326,9 +314,7 @@
     },
     "/identity/auth/verify": {
       "post": {
-        "tags": [
-          "Auth APIs"
-        ],
+        "tags": ["Auth APIs"],
         "description": "Verify email by code",
         "requestBody": {
           "content": {
@@ -373,9 +359,7 @@
         }
       },
       "get": {
-        "tags": [
-          "Auth APIs"
-        ],
+        "tags": ["Auth APIs"],
         "description": "Verify email by token",
         "parameters": [
           {
@@ -412,9 +396,7 @@
     },
     "/identity/test": {
       "get": {
-        "tags": [
-          "Test"
-        ],
+        "tags": ["Test"],
         "responses": {
           "200": {
             "description": "OK"
@@ -424,9 +406,7 @@
     },
     "/identity/test/seed-data": {
       "get": {
-        "tags": [
-          "Test"
-        ],
+        "tags": ["Test"],
         "responses": {
           "200": {
             "description": "OK"
@@ -448,17 +428,11 @@
         "additionalProperties": false
       },
       "Gender": {
-        "enum": [
-          "Male",
-          "Female",
-          "Other"
-        ],
+        "enum": ["Male", "Female", "Other"],
         "type": "string"
       },
       "RefreshRequest": {
-        "required": [
-          "refreshToken"
-        ],
+        "required": ["refreshToken"],
         "type": "object",
         "properties": {
           "refreshToken": {
@@ -550,15 +524,18 @@
         "additionalProperties": false
       },
       "SignInRequest": {
+        "required": ["email", "password"],
         "type": "object",
         "properties": {
           "email": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 20,
+            "minLength": 6,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -576,35 +553,49 @@
         "additionalProperties": false
       },
       "SignUpRequest": {
+        "required": [
+          "email",
+          "firstName",
+          "lastName",
+          "mobileNumber",
+          "password",
+          "passwordConfirmation"
+        ],
         "type": "object",
         "properties": {
           "firstName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
           },
           "middleName": {
             "type": "string",
             "nullable": true
           },
           "lastName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
           },
           "email": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 20,
+            "minLength": 6,
+            "type": "string"
           },
           "passwordConfirmation": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 20,
+            "minLength": 6,
+            "type": "string"
           },
           "mobileNumber": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "tel"
           },
           "birthdate": {
             "type": "string",

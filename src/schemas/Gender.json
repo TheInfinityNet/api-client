@@ -1,1 +1,0 @@
-{ "enum": ["Male", "Female", "Other"], "type": "string", "x-readme-ref-name": "Gender" }

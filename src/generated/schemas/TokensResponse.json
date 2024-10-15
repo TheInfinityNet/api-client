@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "accessToken": { "type": "string", "nullable": true },
+    "refreshToken": { "type": "string", "nullable": true }
+  },
+  "additionalProperties": false,
+  "x-readme-ref-name": "TokensResponse"
+}

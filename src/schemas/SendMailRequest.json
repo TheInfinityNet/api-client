@@ -1,1 +1,0 @@
-{ "type": "object", "properties": { "email": { "type": "string", "nullable": true }, "type": { "enum": ["VerifyByCode", "VerifyByToken", "ResetByCode", "ResetByToken"], "type": "string", "x-readme-ref-name": "VerificationType" } }, "additionalProperties": false, "x-readme-ref-name": "SendMailRequest" }

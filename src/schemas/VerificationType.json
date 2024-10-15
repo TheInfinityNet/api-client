@@ -1,1 +1,0 @@
-{ "enum": ["VerifyByCode", "VerifyByToken", "ResetByCode", "ResetByToken"], "type": "string", "x-readme-ref-name": "VerificationType" }

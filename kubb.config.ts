@@ -12,7 +12,7 @@ export default defineConfig(() => {
         path: './openapi.json',
       },
       output: {
-        path: './src',
+        path: './src/generated',
         clean: true,
       },
       plugins: [
@@ -28,6 +28,9 @@ export default defineConfig(() => {
         pluginClient({
           output: {
             path: './clients',
+          },
+          client: {
+            importPath: 'client',
           },
         }),
         pluginZod({

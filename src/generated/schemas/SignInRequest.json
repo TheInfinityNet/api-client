@@ -1,0 +1,10 @@
+{
+  "required": ["email", "password"],
+  "type": "object",
+  "properties": {
+    "email": { "minLength": 1, "type": "string", "format": "email" },
+    "password": { "maxLength": 20, "minLength": 6, "type": "string" }
+  },
+  "additionalProperties": false,
+  "x-readme-ref-name": "SignInRequest"
+}

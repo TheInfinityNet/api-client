@@ -1,1 +1,0 @@
-{ "type": "object", "properties": { "email": { "type": "string", "nullable": true }, "password": { "type": "string", "nullable": true } }, "additionalProperties": false, "x-readme-ref-name": "SignInRequest" }
