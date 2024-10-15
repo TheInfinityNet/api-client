@@ -1,5 +1,6 @@
 import { defineConfig } from '@kubb/core'
 import { pluginOas } from '@kubb/plugin-oas'
+import { pluginClient } from '@kubb/swagger-client'
 import { pluginTs } from '@kubb/swagger-ts'
 import { pluginZod } from '@kubb/swagger-zod'
 
@@ -25,6 +26,12 @@ export default defineConfig(() => {
           },
           enumType: 'asConst',
           dateType: 'string',
+        }),
+        pluginClient({
+          output: {
+            path: './clients',
+            exportAs: 'clients',
+          },
         }),
         pluginZod({
           output: {
